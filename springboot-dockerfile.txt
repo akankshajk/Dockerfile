@@ -1,0 +1,21 @@
+[root@ip-172-31-43-218 ~]# cat Dockerfile
+FROM openjdk:17
+WORKDIR /
+COPY SpringBootExecutableJarFileDemo-0.0.1-SNAPSHOT.jar SpringBootExecutableJarFileDemo-0.0.1-SNAPSHOT.jar
+EXPOSE 8080
+CMD java -jar SpringBootExecutableJarFileDemo-0.0.1-SNAPSHOT.jar
+
+
+-172-31-43-218 ~]#
+[root@ip-172-31-43-218 ~]# docker run -itdp 8080:8080 test:2.0
+be957847bb0e39a0c12aad86b8e5c3231c921f304f8c9e79fecac175311b99f8
+[root@ip-172-31-43-218 ~]# docker ps
+CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS        PORTS                                       NAMES
+be957847bb0e   test:2.0   "/bin/sh -c 'java -j…"   2 seconds ago   Up 1 second   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   magical_chatterjee
+[root@ip-172-31-43-218 ~]#
+[root@ip-172-31-43-218 ~]#
+[root@ip-172-31-43-218 ~]#
+[root@ip-172-31-43-218 ~]# ls -ltr
+
+
+access from public ip:8080/getData
